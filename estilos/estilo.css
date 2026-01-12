@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cor01:#F2D8D5;
+    --cor02:#BF8C88;
+    --cor03:#D9B7B0;
+    --cor04:#D9AB82;
+    --cor05:#BF895A;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+header{
+    width: 100vw;
+    height: 700px;
+    background: var(--cor01);
+    
+}
+nav{
+    width: 100vw;
+    height: 65px;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px var(--cor05) ;
+    background-color: var(--cor03);
+}
+
+#menu-toggle{
+    display: none;
+
+}
+
+.menu-btn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-btn span{
+    display: block;
+    height: 3px;
+    width: 100%;
+    transition: 0.3s;
+    border-radius: 3px;
+    background: var(--cor01);
+}
+.slide-menu{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    color: var(--cor01);
+    background: var(--cor03);
+    transition: left 0.3 ease;
+    padding: 60px;
+    z-index: 1001;
+}
+
+.slide-menu ul, li{
+    list-style: none;
+
+
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--cor03);
+}
+.slide-menu ul,li:hover{
+    background: var(--cor05);
+    cursor: pointer;
+    
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+#menu-toggle:checked ~ .slide-menu{
+    left: 0;
+}
+
+#menu-toggle:checked ~ .overlay{
+    opacity: 1;
+    background: rgba(0,0,0,0.5);
+    pointer-events: auto;
+}
+#menu-toggle:checked + .menu-btn span:nth-child(1){
+    transform: rotate(45deg) translateY(13px);
+    background: #ffff;
+}
+
+#menu-toggle:checked + .menu-btn span:nth-child(2){
+    opacity: 0;
+}
+
+#menu-toggle:checked + .menu-btn span:nth-child(3){
+    transform: rotate(-45deg) translateY(-13px);
+    background: #ffff;
+}
+
+header h1{
+    
+    color: var(--cor04);
+    padding-top: 120px;
+    font-size: 3em;
+    text-align: center;
+}
+header p{
+    padding-right: 8px;
+    padding-left: 8px;
+    color: var(--cor04);
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}
