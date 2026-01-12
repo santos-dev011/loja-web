@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -11,16 +14,24 @@
     --cor03:#D9B7B0;
     --cor04:#D9AB82;
     --cor05:#BF895A;
+    --font01: "Playfair Display", serif;
+    --font02: "Montserrat", sans-serif;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
     display: flex;
+}
+body h1{
+    font-family: var(--font01);
+}
+body p{
+    font-family: var(--font02);
 }
 
 header{
     width: 100vw;
-    height: 700px;
-    background: var(--cor01);
+    height: 80vh;
+    background: linear-gradient(to bottom, var(--cor01 ) 85%, transparent );
     
 }
 nav{
@@ -199,4 +210,19 @@ header p{
     font-size: 1.2em;
     margin-top: 20px;
     text-align: center;
+}
+
+h1, h2{
+    font-family: var(--font01);
+    letter-spacing: 4px;
+}
+
+p{
+    font-family: var(--font02);
+    letter-spacing: 2px;
+}
+
+main{
+    color: var(--cor05);
+    background: ;
 }
